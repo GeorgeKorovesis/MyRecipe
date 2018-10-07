@@ -29,7 +29,6 @@ public class MainRecipeActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
-            
             return false;
         }
     };
