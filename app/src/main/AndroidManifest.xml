@@ -10,14 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainRecipeActivity"
+            android:name=".view.MainRecipeActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".FetchRecipesJobService"
+            android:label="Job Service"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+        </service>
+        <service
+            android:name=".FetchRecipesIntentService"
+            android:label="Intent Service">
+        </service>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="1d4cd328939f600aa19195ee00af8e3c3e9f76c7" />

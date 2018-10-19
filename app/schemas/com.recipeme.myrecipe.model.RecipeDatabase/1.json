@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1b227a2add98ed78103883b019adc60a",
+    "entities": [
+      {
+        "tableName": "recipes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `recipe_title` TEXT, `recipe_ingredients` TEXT, `favorite_recipe` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recipeTitle",
+            "columnName": "recipe_title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "recipeIngredients",
+            "columnName": "recipe_ingredients",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isFavoriteRecipe",
+            "columnName": "favorite_recipe",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1b227a2add98ed78103883b019adc60a\")"
+    ]
+  }
+}
